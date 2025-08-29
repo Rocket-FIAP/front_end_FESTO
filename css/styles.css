@@ -1,0 +1,469 @@
+/* =========================
+   RESET E BODY
+   ========================= */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* =========================
+   HEADER (container principal)
+   ========================= */
+header {
+    max-height: auto;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content:center;
+    column-gap: 0.1vw;
+    flex-wrap: wrap;
+    width: 100%;
+    background: linear-gradient(120deg, #0091DC 0%, #07080D 40%);
+    margin: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    overflow: hidden;
+    
+}
+
+/* =========================
+   EFEITO DE RUÍDO NO HEADER
+   ========================= */
+header::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.07;
+    mix-blend-mode: multiply;
+    /* Imagem de ruído base64 inline, transparente */
+}
+
+/* =========================
+   HEADER TOP (conteúdo principal do header)
+   ========================= */
+.header_top {
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 2rem;
+    max-width: 800px;
+    width: 100%;
+    box-sizing: border-box;
+    margin-right:10vw ;
+   
+}
+
+/* =========================
+   BARRA LOGO (logo + navbar)
+   ========================= */
+.barra_logo {
+    display: flex;
+    align-items: center;
+}
+
+/* =========================
+   LOGO
+   ========================= */
+.logo {
+    width: 2.5rem;
+    margin-right: 1rem;
+}
+
+/* =========================
+   NAVBAR (menu de navegação)
+   ========================= */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    background: transparent;
+    border: 0.13rem solid #0091DC;
+    border-radius: 0.6rem;
+    padding: 4px;
+    min-width: fit-content;
+    box-sizing: border-box;
+}
+
+/* Dropdown principal */
+.dropdown {
+    position: relative;
+}
+
+/* Botão do dropdown */
+.dropbtn {
+    color: #fff;
+    background-color: transparent;
+    padding: 0.7rem 1.5rem 0.7rem 2rem;
+    border: none;
+    border-radius: 0.5rem 0 0 0.5rem;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.dropbtn:after {
+    content: "▼";
+    font-size: 0.7em;
+    margin-left: 0.5rem;
+}
+
+/* Dropdown conteúdo */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 2.7rem;
+    left: 0;
+    background: #0a3557;
+    min-width: 14rem;
+    border-radius: 0 0 0.6rem 0.6rem;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #fff;
+    padding: 0.8rem 1.2rem;
+    text-decoration: none;
+    display: block;
+    font-size: 1rem;
+    transition: background 0.2s;
+}
+
+.dropdown-content a:hover {
+    background: #0091DC;
+}
+
+/* Só mostra dropdown ao clicar/focar */
+.dropdown:focus-within .dropdown-content {
+    display: block;
+}
+
+/* Hover e estilo dos links da navbar */
+.navbar a:hover,
+.navbar button:hover,
+.dropbtn:hover {
+    background-color: rgba(0, 145, 220, 0.3);
+    color: #fff;
+    border-radius: 0.5rem;
+}
+
+.navbar a,
+.navbar button {
+    background: none;
+    border: none;
+    color: #fff;
+    padding: 0.7rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 0;
+    transition: background 0.2s, color 0.2s;
+}
+
+.navbar a:not(:first-child) {
+    margin-left: 0.15rem;
+}
+
+.navbar a {
+    text-decoration: none;
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+
+/* =========================
+   RESPONSIVIDADE NAVBAR E HEADER
+   ========================= */
+@media (max-width: 700px) {
+    header {
+        padding: 0.7rem;
+    }
+
+    .navbar {
+        max-width: 100%;
+        padding: 0.1rem 0.1rem;
+        box-sizing: border-box;
+    }
+
+    .navbar a,
+    .navbar button,
+    .dropbtn {
+        width: auto;
+        text-align: center;
+        padding: 0.4rem 0.7rem;
+        font-size: 0.95rem;
+    }
+
+    .dropdown-content {
+        min-width: 9rem;
+        font-size: 0.95rem;
+    }
+
+    .logo {
+        width: 2rem;
+        margin-right: 0.5rem;
+    }
+}
+
+/* =========================
+   TÍTULO PRINCIPAL
+   ========================= */
+.title {
+    color: #fff;
+    font-size: 3.2rem;
+    margin-top: 2.9rem;
+    font-family: "IBM Plex Sans Condensed", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+}
+
+/* =========================
+   TEXTO HEADER
+   ========================= */
+.texto_header {
+    max-width: 741px;
+    color: #fff;
+    font-size: 1.1rem;
+    font-family: "IBM Plex Sans Condensed", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    max-width: 100%;
+    overflow-wrap: break-word;
+    word-break: break-word;
+}
+
+/* =========================
+   BOTÃO INICIAR PREDIÇÃO
+   ========================= */
+.btn-predicao {
+    background: transparent;
+    color: #fff;
+    border: 2px solid #0091dc;
+    border-radius: 0.6rem;
+    padding: 0.8rem 2rem 0.8rem 1.2rem;
+    font-size: 1rem;
+    font-family: inherit;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 1.2rem;
+    transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+    box-sizing: border-box;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
+    max-width: fit-content;
+}
+
+.btn-predicao:hover,
+.btn-predicao:focus {
+    background: rgba(0, 145, 220, 0.3);
+    border-color: #63c6ff;
+    outline: none;
+    box-shadow: 0 0 0 2px #1e90ff33;
+}
+
+.btn-predicao .arrow {
+    font-size: 1.5rem;
+    transition: transform 0.2s;
+}
+
+.btn-predicao:hover .arrow {
+    transform: translateX(8px);
+}
+
+@media (max-width: 700px) {
+    .btn-predicao {
+        font-size: 1rem;
+        padding: 0.7rem 1.2rem 0.7rem 0.8rem;
+        gap: 0.7rem;
+    }
+
+    .btn-predicao .arrow {
+        font-size: 1.2rem;
+    }
+}
+
+/* =========================
+   IMAGEM PNEUMÁTICO (ao lado do texto)
+   ========================= */
+.imagem_header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Espaço entre texto e imagem */
+    /* Responsivo: largura máxima e ajuste automático */
+    max-width: 32vw;
+    
+    height: auto;
+}
+
+.imagem_header img {
+    width: 100%;
+    max-width: 400px;
+    height: auto;
+    object-fit: contain;
+    border-radius: 0.5rem;
+    box-shadow: 0 0.2em 0.8em rgba(0,0,0,0.08);
+    background: #fff;
+    display: block;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 900px) {
+    .imagem_header {
+        margin: 2rem auto 0 auto;
+        max-width: 90vw;
+        justify-content: center;
+    }
+    .imagem_header img {
+        max-width: 90vw;
+    }
+}
+
+
+/* =========================
+            Classe main
+   ========================= */
+
+main {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+
+.title_main {
+    color: #000000; 
+    margin-top: 10vh;
+    font-family: "IBM Plex Sans Condensed", sans-serif;
+    font-weight: 500;
+    font-style:normal;
+    font-size: 4rem;
+    margin-bottom: 2.7rem;
+}
+
+.title_main2 {
+    color: #000000; 
+    margin-top: 2vh;
+    font-family: "IBM Plex Sans Condensed", sans-serif;
+    font-weight: 500;
+    font-style:normal;
+    font-size: 4rem;
+    
+}
+
+.first_text {
+    
+    font-family: "IBM Plex Sans Condensed", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 1.5rem;
+    text-align:justify;
+    max-width: 78vw;
+    line-height: 2rem;
+
+}
+
+.container_text {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    box-sizing: border-box;
+    
+}
+
+
+
+.first_img_main {
+    max-width:78vw;
+    min-width: 10vw;
+    border-radius: 10px;
+    
+}
+
+/* =========================
+    dropbox sobre projeto
+   ========================= */
+
+.accordion-container {
+            width: 78vw;
+            margin: 3rem auto;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+            text-align: center;
+        }
+        .accordion {
+            border: 1px solid #0091dc;
+            border-radius: 10px;
+            background: #fff;
+            overflow: hidden;
+            transition: box-shadow 0.2s;
+        }
+        .accordion summary {
+            cursor: pointer;
+            font-size: 2rem;
+            font-family: "IBM Plex Sans Condensed", Arial, sans-serif;
+            padding: 1.2rem 1.5rem;
+            outline: none;
+            color: #222;
+            background: #fff;
+            transition: background 0.2s;
+        }
+        .accordion[open] {
+            box-shadow: 0 0 0 2px #0091dc33;
+        }
+        .accordion summary:hover {
+            background: #f0f8ff;
+            transition: background 0.2s, border-color 0.2s, box-shadow 0.2s;
+
+        }
+        
+        .accordion-content {
+            padding: 1.2rem 1.5rem 1.5rem 1.5rem;
+            font-size: 1.25rem;
+            color: #222;
+            font-family: "IBM Plex Sans Condensed", Arial, sans-serif;
+            background: #fff;
+        }
+        @media (max-width: 600px) {
+            .accordion-container {
+                max-width: 98vw;
+                padding: 0.2rem;
+                gap: 0.7rem;
+            }
+            .accordion summary {
+                font-size: 1.2rem;
+                padding: 0.8rem 1rem;
+            }
+            .accordion-content {
+                font-size: 1rem;
+                padding: 0.8rem 1rem 1rem 1rem;
+            }
+        }
+
+        /* Animação suave para o accordion */
+.accordion[open] .accordion-content {
+    animation: accordionOpen 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes accordionOpen {
+    0% {
+        opacity: 0;
+        transform: translateY(-16px) scaleY(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scaleY(1);
+    }
+}
+
+.accordion .accordion-content {
+    transition: opacity 0.25s, transform 0.25s;
+}
